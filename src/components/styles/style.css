@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: aliceblue;
+  height: 100%;
+  width: 100%;
+}
+
+.row-sum {
+  color: #7738ff;
+}
+
+.row-sum p {
+  color: black;
+}
