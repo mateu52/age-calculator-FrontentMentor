@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 function Calculator(){
+    const [validated, setValidated] = useState(false);
     const [day, setDay] =useState("--");
     const [month, setMonth] =useState("--");
     const [year, setYear] =useState("--");
@@ -15,7 +16,7 @@ function Calculator(){
     const monthRef = useRef();
     const yearRef = useRef();
 
-    const handleChage = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         const day = dayRef.current.value;
         const month = monthRef.current.value;
@@ -35,54 +36,56 @@ function Calculator(){
                 }
             }
         }
-    }
-    const [validated, setValidated] = useState(false);
-    const handleSubmit = (event) => {
         const form = event.currentTarget;
+        console.log(event)
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
         }
     
         setValidated(true);
-    };
+    }
+    // const handleSubmit = (event) => {
+    //     const form = event.currentTarget;
+    //     console.log(event)
+    //     if (form.checkValidity() === false) {
+    //         event.preventDefault();
+    //         event.stopPropagation();
+    //     }
+    
+    //     setValidated(true);
+    // };
     return(
     <div style={styles} className="container">
         <Container>
-            <Form noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form  validated={validated} onSubmit={handleSubmit}>
                 <Row className="row">
                 <Form.Group as={Col} md="4" controlId="validationCustom01">
-                    <Form.Label>Day</Form.Label>
-                    <Form.Control
-                        required
-                        type="text"
-                        placeholder="First name"
-                        defaultValue="Mark"
-                        ref={dayRef}
-                    />
-                <Form.Control.Feedback>Month</Form.Control.Feedback>
+                    <Form.Label className="col">Day</Form.Label>
+                        <Form.Control className="input"
+                            required
+                            type="text"
+                            placeholder="DD"
+                            ref={dayRef}
+                        />
                 </Form.Group>
                 <Form.Group as={Col} md="4" controlId="validationCustom01">
-                    <Form.Label>First name</Form.Label>
-                    <Form.Control
+                    <Form.Label className="col">Month</Form.Label>
+                    <Form.Control className="input"
                         required
                         type="text"
-                        placeholder="First name"
-                        defaultValue="Mark"
+                        placeholder="MM"
                         ref={monthRef}
                     />
-                <Form.Control.Feedback>Year</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} md="4" controlId="validationCustom01">
-                    <Form.Label>First name</Form.Label>
-                    <Form.Control
+                    <Form.Label className="col">Year</Form.Label>
+                    <Form.Control className="input"
                         required
                         type="text"
-                        placeholder="First name"
-                        defaultValue="Mark"
+                        placeholder="YYYY"
                         ref={yearRef}
                     />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
                 </Row>
 
@@ -102,9 +105,10 @@ function Calculator(){
                         <input ref={yearRef}/></Form.Label>
                     </Col>
                 </Row> */}
-
+            <button onClick={handleSubmit} className="button" type="submit">
+                <img src={ArrowIcon} className="arrowImg" alt="img" />
+            </button>
             </Form>
-            <button onClick={handleChage} className="button"><img src={ArrowIcon} className="arrowImg" alt="img" /></button>
             <Row className="row-sum">
                 <p className="text">{year}</p><p>years</p>
             </Row>
