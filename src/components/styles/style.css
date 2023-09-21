@@ -1,18 +1,58 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  background-color: #e8e3e3;
+}
+
+input {
+  background-color: aliceblue;
+  width: 80px;
+  height: 30px;
 }
 
 .container {
-  background-color: aliceblue;
+  background-color: #71aee4;
   height: 100%;
   width: 100%;
+  font-size: 32px;
+  font-size: 16px;
 }
 
-.row-sum {
-  color: #7738ff;
+.container .row {
+  background-color: aliceblue;
+  width: 320px;
 }
 
-.row-sum p {
+.container .row .col {
+  background-color: #add4f5;
+  width: 160px;
+}
+
+.container .row-sum {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.container .row-sum p {
   color: black;
+  width: 30%;
+}
+
+.container .row-sum .text {
+  color: #7738ff;
+  float: left;
+}
+
+.container .arrowImg {
+  background-color: black;
+  border: solid black 1px;
+  border-radius: 50%;
+}
+
+.container .button {
+  background-color: black;
+  border-radius: 50%;
+  size: 150%;
+  height: 80px;
+  width: 80px;
 }
