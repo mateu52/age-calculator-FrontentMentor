@@ -11,15 +11,42 @@
 }
 
 .container {
-  background-color: #71aee4;
+  margin: 20px auto auto auto;
+  background-color: white;
   height: 100%;
-  width: 100%;
+  max-width: 400px !important;
   font-size: 32px;
   font-size: 16px;
 }
 
+.container .line {
+  background-color: white;
+  display: flex;
+  padding-top: 10px;
+  justify-content: flex-start;
+  position: relative;
+  height: 100px;
+  z-index: 10px;
+}
+
+.container .line hr {
+  background-color: white;
+  position: absolute;
+  margin-top: 40px;
+  justify-content: flex-start;
+  height: 30px;
+  width: 90%;
+  z-index: 10;
+}
+
+.container .line .button {
+  position: absolute;
+  z-index: 100;
+  margin: auto auto auto 75%;
+}
+
 .container .row {
-  background-color: aliceblue;
+  background-color: white;
   width: 320px;
 }
 
@@ -34,6 +61,7 @@
 }
 
 .container .row-sum p {
+  background-color: white;
   color: black;
   width: 30%;
 }
@@ -55,4 +83,20 @@
   size: 150%;
   height: 80px;
   width: 80px;
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    height: 100%;
+    max-width: 350px;
+    font-size: 32px;
+    font-size: 16px;
+  }
+  .container .line hr {
+    width: 90%;
+    height: 90%;
+  }
+  .container .line .button {
+    margin: auto auto auto 35%;
+  }
 }

@@ -17,7 +17,9 @@ function Calculator(){
     const yearRef = useRef();
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
+        // let label = document.getElementsByClassName("div label")[0];
+        //     label.style.color = "red";
         const day = dayRef.current.value;
         const month = monthRef.current.value;
         const year = yearRef.current.value;
@@ -41,9 +43,12 @@ function Calculator(){
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+            let label = document.getElementsByClassName("div label");
+            label.style.color = "red";
         }
-    
+        
         setValidated(true);
+        
     }
     // const handleSubmit = (event) => {
     //     const form = event.currentTarget;
@@ -58,10 +63,10 @@ function Calculator(){
     return(
     <div style={styles} className="container">
         <Container>
-            <Form  validated={validated} onSubmit={handleSubmit}>
+            <Form className="bg-white p-2" validated={validated} onSubmit={handleSubmit}>
                 <Row className="row">
-                <Form.Group as={Col} md="4" controlId="validationCustom01">
-                    <Form.Label className="col">Day</Form.Label>
+                <Form.Group className="bg-white" as={Col} md="4" controlId="validationCustom01">
+                    <Form.Label className="col label">Day</Form.Label>
                         <Form.Control className="input"
                             required
                             type="text"
@@ -69,17 +74,17 @@ function Calculator(){
                             ref={dayRef}
                         />
                 </Form.Group>
-                <Form.Group as={Col} md="4" controlId="validationCustom01">
-                    <Form.Label className="col">Month</Form.Label>
+                <Form.Group className="bg-white" as={Col} md="4" controlId="validationCustom01">
+                    <Form.Label className="col label" >Month</Form.Label>
                     <Form.Control className="input"
-                        required
+                        required 
                         type="text"
                         placeholder="MM"
                         ref={monthRef}
                     />
                 </Form.Group>
-                <Form.Group as={Col} md="4" controlId="validationCustom01">
-                    <Form.Label className="col">Year</Form.Label>
+                <Form.Group className="bg-white" as={Col} md="4" controlId="validationCustom01">
+                    <Form.Label className="col label">Year</Form.Label>
                     <Form.Control className="input"
                         required
                         type="text"
@@ -88,26 +93,12 @@ function Calculator(){
                     />
                 </Form.Group>
                 </Row>
-
-                {/* <Row className="d-flex flex-center row">
-                    <Col className="col"><Form.Label>Day</Form.Label></Col>
-                    <Col className="col"><Form.Label>Month</Form.Label></Col>
-                    <Col className="col"><Form.Label>Year</Form.Label></Col>
-                </Row>
-                <Row className="d-flex clex-center row">
-                    <Col className="col"><Form.Label>
-                        <input ref={dayRef}/></Form.Label>
-                    </Col>
-                    <Col className="col"><Form.Label>
-                        <input ref={monthRef}/></Form.Label>
-                    </Col>
-                    <Col className="col"><Form.Label>
-                        <input ref={yearRef}/></Form.Label>
-                    </Col>
-                </Row> */}
-            <button onClick={handleSubmit} className="button" type="submit">
-                <img src={ArrowIcon} className="arrowImg" alt="img" />
-            </button>
+            <div className="line">
+                <p><hr></hr></p>
+                <button onClick={handleSubmit} className="button" type="submit">
+                    <img src={ArrowIcon} className="arrowImg" alt="img" />
+                </button>
+            </div>
             </Form>
             <Row className="row-sum">
                 <p className="text">{year}</p><p>years</p>
