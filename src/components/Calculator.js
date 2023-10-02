@@ -63,7 +63,7 @@ function Calculator(){
     return(
     <div style={styles} className="container">
         <Container>
-            <Form className="bg-white p-2" validated={validated} onSubmit={handleSubmit}>
+            <Form className="bg-white p-2 form" validated={validated} onSubmit={handleSubmit}>
                 <Row className="row">
                 <Form.Group className="bg-white" as={Col} md="4" controlId="validationCustom01">
                     <Form.Label className="col label">Day</Form.Label>

@@ -5,7 +5,7 @@
 }
 
 .input {
-  background-color: aliceblue;
+  background-color: white;
   width: 80px;
   height: 30px;
 }
@@ -13,10 +13,15 @@
 .container {
   margin: 20px auto auto auto;
   background-color: white;
-  height: 100%;
+  height: 395px;
   max-width: 400px !important;
   font-size: 32px;
   font-size: 16px;
+  border-radius: 0 15% 25% 5%;
+}
+
+.container .form {
+  width: 320px;
 }
 
 .container .line {
@@ -50,9 +55,13 @@
   width: 320px;
 }
 
+.container .row .label {
+  font-weight: 500;
+}
+
 .container .row .col {
-  background-color: #add4f5;
-  width: 160px;
+  background-color: white;
+  width: 90px;
 }
 
 .container .row-sum {
@@ -72,14 +81,15 @@
 }
 
 .container .arrowImg {
-  background-color: black;
-  border: solid black 1px;
+  background-color: #7738ff;
+  border: solid #7738ff 1px;
   border-radius: 50%;
 }
 
 .container .button {
-  background-color: black;
+  background-color: #7738ff;
   border-radius: 50%;
+  border: solid #7738ff 1px;
   size: 150%;
   height: 80px;
   width: 80px;
@@ -87,14 +97,14 @@
 
 @media (max-width: 767.98px) {
   .container {
-    height: 100%;
+    height: 500px;
     max-width: 350px;
     font-size: 32px;
     font-size: 16px;
+    border-radius: 0% 15% 15% 5%;
   }
   .container .line hr {
-    width: 90%;
-    height: 90%;
+    padding: 10px;
   }
   .container .line .button {
     margin: auto auto auto 35%;
