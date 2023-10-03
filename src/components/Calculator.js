@@ -17,7 +17,7 @@ function Calculator(){
     const yearRef = useRef();
 
     const handleSubmit = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
         // let label = document.getElementsByClassName("div label")[0];
         //     label.style.color = "red";
         const day = dayRef.current.value;
